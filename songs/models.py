@@ -7,8 +7,12 @@ class Song(models.Model) :
     title = models.CharField(
             max_length=200
     )
-    album = models.TextField()
-    artist = models.TextField()
+    album = models.CharField(
+            max_length=200
+    )
+    artist = models.CharField(
+            max_length=200
+    )
     year = models.IntegerField(max_digits=4, null=True)
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
